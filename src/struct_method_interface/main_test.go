@@ -21,3 +21,21 @@ func Test_Area(t *testing.T) {
 		checkRes(t, circle, 314)
 	})
 }
+
+// 两个测试函数分开写
+//func TestRectangle_Area(t *testing.T) {
+//	res := Rectangle{1, 2}.Area()
+//	expected := 2.00
+//	if res != expected {
+//		t.Errorf("res : %.2f, expected : %.2f", res, expected)
+//	}
+//}
+//
+//func TestCircle_Area(t *testing.T) {
+//	res := Circle{100}.Area()
+//	expected := 314.00
+//	if res != expected {
+//		t.Errorf("res : %.2f, expected : %.2f", res, expected)
+//	}
+//
+//}

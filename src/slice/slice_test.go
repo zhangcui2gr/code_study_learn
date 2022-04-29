@@ -31,9 +31,10 @@ func TestSumAgrs(t *testing.T) {
 	t.Run("测试切片生成", func(t *testing.T) {
 		arr := [5]int{1, 2, 3, 4, 5}
 		slic := slice_gen(arr)
-		expected_slice := []int{2, 3, 4, 5}
-		if !reflect.DeepEqual(slic, expected_slice) {
-			t.Errorf("slic : %v, expected_slice : %v", slic, expected_slice)
+		//expected_slice := []int{2, 3, 4, 5}
+		str := "hello"
+		if !reflect.DeepEqual(slic, str) {
+			t.Errorf("slic : %v, expected_slice : %v", slic, str)
 		}
 	})
 

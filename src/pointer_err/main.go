@@ -1,6 +1,11 @@
 package pointer_err
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
+
+var insufficetMoneyErr error = errors.New("balance is not enough")
 
 //创建新的计量单位
 type Bitcoin int
@@ -17,6 +22,14 @@ func (w *Wallet) deposit(money Bitcoin) {
 //查看余额的方法
 func (w *Wallet) Balance() Bitcoin {
 	return w.balance
+}
+
+func (w *Wallet) Withdraw(money Bitcoin) error {
+	if w.Balance() < money {
+		return insufficetMoneyErr
+	}
+	w.balance -= money
+	return nil
 }
 
 //实现Bitcoin的stringer方法
